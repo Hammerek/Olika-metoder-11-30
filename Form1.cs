@@ -21,33 +21,39 @@ namespace Olika_metoder_11_30
         
         private void button1_Click(object sender, EventArgs e)
         {
-            double tbx1 = Convert.ToDouble(textBox3.Text); 
-            
-            label3.Text = ""; 
-            if (tbx1 == 1)
+            int metod = Convert.ToInt32(textBox3.Text);
+            int tbx1 = Convert.ToInt32(textBox1.Text);
+            int tbx2 = Convert.ToInt32(textBox2.Text);
+
+
+            label3.Text = "";
+            if (metod == 1)
             {
                 label3.Text = Convert.ToString(klot_volym());
             }
-            else if (tbx1 == 2)
+            else if (metod == 2)
             {
                 label3.Text = Convert.ToString(cylinder_volym());
             }
-            else if (tbx1 == 3)
+            else if (metod == 3)
             {
-                label3.Text = Convert.ToString(braktal());
+                label3.Text = Convert.ToString(braktal(tbx1, tbx2));
             }
-            else if (tbx1 == 4)
+            else if (metod == 4)
             {
-                label3.Text = Convert.ToString(summera());
+                label3.Text = Convert.ToString(summera(tbx1));
             }
-            else if (tbx1 == 5)
+            else if (metod == 5)
             {
                 label3.Text = "";
             }
-            else if (tbx1 == 6)
+            else if (metod == 6)
             {
                 Application.Exit();
-                
+            }
+            else
+            {
+                MessageBox.Show("Välj metod mellan 1-6");
             }
         }
 
@@ -64,21 +70,42 @@ namespace Olika_metoder_11_30
             return (Math.PI * Math.Pow(tbx1, 2)  * tbx2);
         }
 
-        private double braktal()
+        private string braktal(int tbx1, int tbx2)
         {
-            double tbx1 = Convert.ToDouble(textBox1.Text);
-            double tbx2 = Convert.ToDouble(textBox2.Text);
-            return (tbx1 / tbx2); 
+            int helnummer = tbx1 / tbx2;
+            int fraction = tbx1 % tbx2;
+            if (helnummer == 0)
+            {
+                return fraction + "/" + tbx2;
+            }
+            else
+            {
+                if (fraction == 0)
+                {
+                    return helnummer + " ";
+                }
+                else
+                {
+                    return helnummer + " " + fraction + "/" + tbx2;
+                }
+            }
         }
 
-        private double summera()
-        {
-            double tbx1 = Convert.ToDouble(textBox1.Text);  
-            for (int i = 1; i < tbx1; i++)
+        private double summera(double tbx1)
+        {           
+            double tal = 1;
+            while (tal <= tbx1)
             {
-              
-            }
+                double total = 0;
+                total += tal;
+                
+                
+                label3.Text = label3.Text  + total; 
+                tal++;
+                 
+            }            
             return Convert.ToDouble(label3.Text); 
+
         }
     }
 }
