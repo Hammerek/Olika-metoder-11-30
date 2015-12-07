@@ -23,7 +23,7 @@ namespace Olika_metoder_11_30
         {
             double tbx1 = Convert.ToDouble(textBox3.Text); 
             
-            label3.Text = "svar1"; 
+            label3.Text = ""; 
             if (tbx1 == 1)
             {
                 label3.Text = Convert.ToString(klot_volym());
