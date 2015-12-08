@@ -89,17 +89,17 @@ namespace Olika_metoder_11_30
             }
         }
 
-        private double summera(double tbx1)
+        private string summera(int tbx1)
         {           
-            double tal = 1;
+            int tal = 1;
             while (tal <= tbx1)
             {
-
-                label3.Text = label3.Text + tal; 
                 tal++;
-
-            }            
-            return Convert.ToDouble(label3.Text); 
+                return label3.Text = Convert.ToString(tal); 
+                
+                
+            }
+            return label3.Text = Convert.ToString(tal); 
 
         }
     }
