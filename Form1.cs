@@ -24,8 +24,6 @@ namespace Olika_metoder_11_30
             int metod = Convert.ToInt32(textBox3.Text);
             int tbx1 = Convert.ToInt32(textBox1.Text);
             int tbx2 = Convert.ToInt32(textBox2.Text);
-
-
             label3.Text = "";
             if (metod == 1)
             {
@@ -96,13 +94,10 @@ namespace Olika_metoder_11_30
             double tal = 1;
             while (tal <= tbx1)
             {
-                double total = 0;
-                total += tal;
-                
-                
-                label3.Text = label3.Text  + total; 
+
+                label3.Text = label3.Text + tal; 
                 tal++;
-                 
+
             }            
             return Convert.ToDouble(label3.Text); 
 
