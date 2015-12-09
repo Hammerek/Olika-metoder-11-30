@@ -90,16 +90,20 @@ namespace Olika_metoder_11_30
         }
 
         private string summera(int tbx1)
-        {           
-            int tal = 1;
-            while (tal <= tbx1)
+        {
+
+            int starttal = 1;
+            while (starttal <= tbx1)
             {
-                tal++;
-                return label3.Text = Convert.ToString(tal); 
-                
+                int total = 0;
+                total += starttal;
+                label3.Text = label3.Text + " " + total;
+                starttal++;
                 
             }
-            return label3.Text = Convert.ToString(tal); 
+            return label3.Text = label3.Text; 
+            
+          
 
         }
     }
