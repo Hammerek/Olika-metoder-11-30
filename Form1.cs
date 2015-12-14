@@ -43,7 +43,7 @@ namespace Olika_metoder_11_30
             }
             else if (metod == 5)
             {
-                label3.Text = "";
+                label3.Text = Convert.ToString(calcPoint(tbx1, tbx2, metod));
             }
             else if (metod == 6)
             {
@@ -91,7 +91,6 @@ namespace Olika_metoder_11_30
 
         private string sum(int tbx1)
         {
-
             int starttal = 1;
             string resultat = "";
             int total = 0;
@@ -111,5 +110,19 @@ namespace Olika_metoder_11_30
             label3.Text = label3.Text + " " + resultat + " = " + total;
             return label3.Text = label3.Text;
         }
+        private int calcPoint(int tbx1, int tbx2)
+        {
+            int total;
+            int metod = Convert.ToInt32(textBox3.Text);
+            total = tbx1 * tbx2 + metod;
+            return total - metod;
+        }
+        private int calcLine(int tbx1, int tbx2)
+        {
+            
+
+
+        }
+
     }
 }
