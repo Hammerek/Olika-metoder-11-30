@@ -110,10 +110,9 @@ namespace Olika_metoder_11_30
             label3.Text = label3.Text + " " + resultat + " = " + total;
             return label3.Text = label3.Text;
         }
-        private int calcPoint(int tbx1, int tbx2)
+        private int calcPoint(int tbx1, int tbx2, int metod)
         {
-            int total;
-            int metod = Convert.ToInt32(textBox3.Text);
+            int total;          
             total = tbx1 * tbx2 + metod;
             return total - metod;
         }
