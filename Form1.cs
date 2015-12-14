@@ -14,11 +14,11 @@ namespace Olika_metoder_11_30
     public partial class Form1 : Form
     {
         public Form1()
-        { 
+        {
             InitializeComponent();
-            richTextBox1.Text = "Metoder:" + "\n" + "1 - klot volym" + "\n" + "2 - cylinder volym" + "\n" + "3 - bråktal" + "\n" + "4 - summa" + "\n" + "5 - ekvation" + "\n" + "6 - close"; 
+            richTextBox1.Text = "Metoder:" + "\n" + "1 - klot volym" + "\n" + "2 - cylinder volym" + "\n" + "3 - bråktal" + "\n" + "4 - summa" + "\n" + "5 - ekvation" + "\n" + "6 - close";
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             int metod = Convert.ToInt32(textBox3.Text);
@@ -39,7 +39,7 @@ namespace Olika_metoder_11_30
             }
             else if (metod == 4)
             {
-                label3.Text = Convert.ToString(summera(tbx1));
+                label3.Text = Convert.ToString(sum(tbx1));
             }
             else if (metod == 5)
             {
@@ -57,7 +57,7 @@ namespace Olika_metoder_11_30
 
         private double klot_volym()
         {
-            double tbx1 = Convert.ToDouble(textBox1.Text); 
+            double tbx1 = Convert.ToDouble(textBox1.Text);
             return ((4 * Math.PI * Math.Pow(tbx1, 3)) / 3);
         }
 
@@ -65,7 +65,7 @@ namespace Olika_metoder_11_30
         {
             double tbx1 = Convert.ToDouble(textBox1.Text);
             double tbx2 = Convert.ToDouble(textBox2.Text);
-            return (Math.PI * Math.Pow(tbx1, 2)  * tbx2);
+            return (Math.PI * Math.Pow(tbx1, 2) * tbx2);
         }
 
         private string braktal(int tbx1, int tbx2)
@@ -89,22 +89,27 @@ namespace Olika_metoder_11_30
             }
         }
 
-        private string summera(int tbx1)
+        private string sum(int tbx1)
         {
 
             int starttal = 1;
+            string resultat = "";
+            int total = 0;
             while (starttal <= tbx1)
             {
-                int total = 0;
+                if (starttal == 1)
+                {
+                    resultat += starttal;
+                }
+                else
+                {
+                    resultat += " + " + starttal;
+                }
                 total += starttal;
-                label3.Text = label3.Text + " " + total;
                 starttal++;
-                
             }
-            return label3.Text = label3.Text; 
-            
-          
-
+            label3.Text = label3.Text + " " + resultat + " = " + total;
+            return label3.Text = label3.Text;
         }
     }
 }
